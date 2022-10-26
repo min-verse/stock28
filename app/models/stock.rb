@@ -9,7 +9,7 @@ class Stock < ApplicationRecord
         @key = Rails.application.credentials.tiingo[:api_key]
     
         def self.new_lookup(ticker_symbol)
-            uri = URI("https://api.tiingo.com/tiingo/daily/#{ticker_symbol}/prices?startDate=2020-01-01&token=#{@key}")
+            uri = URI("https://api.tiingo.com/tiingo/daily/#{ticker_symbol}/prices?startDate=2022-07-01&token=#{@key}")
             res = Net::HTTP.get_response(uri)
             if res.is_a?(Net::HTTPSuccess)
                 # this gets you the whole damn intraday data, remember to pick out your deserved info on the frontend
