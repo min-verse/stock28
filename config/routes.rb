@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :historical_stock_data
   resources :user_stocks
   resources :stocks
   resources :users
